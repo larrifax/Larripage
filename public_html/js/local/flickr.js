@@ -12,7 +12,7 @@
         
         return this.each(function() {
 		var obj = $(this);
-		var errorMsg = options.before + createError("warning", "Could not load photos.", false, false) + options.after;
+		var errorMsg = createError("warning", "Could not load photos.", false, false);
 
 		$.ajax({
 			url: "http://api.flickr.com/services/rest/",

@@ -13,15 +13,15 @@ $(document).ready(function(){
 		transitions: [ "blocks2" ]
 	});
 
-	$('#tweets').twitter({
-		tweets: 4,
-		username: "larrifax"
-	});
-	
 	$('#photos').flickr({
 		count: 2,
 		photoset: "72157627755277055",
 		apiKey: "67a78c35dcd459db347a70e085ee73f6",
+	});
+
+	$('#tweets').twitter({
+		tweets: 4,
+		username: "larrifax"
 	});
 	
 	$('#music').lastfm({
