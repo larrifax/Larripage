@@ -1,5 +1,11 @@
 $(document).ready(function(){
 
+	WebFont.load({
+		google: {
+			families: ['Droid Serif:700', 'Droid Sans:700', 'Open Sans']
+		}
+	});
+
 	window.myFlux = new flux.slider('#slider', {
 		autoplay: false,
 		pagination: true,
@@ -30,7 +36,6 @@ $(document).ready(function(){
 		delayIn: 200,
 		template: '<div class="arrow"></div><div class="inner"><h5 class="title"></h5><div class="content"><p></p></div></div>'
 	});
-	
 	
 //	$('a').filter(function() { return this.hostname && this.hostname !== location.hostname; }).after(' <img src="images/external.png" alt="External link"/>');
 	

@@ -19,6 +19,24 @@
 	-moz-transform: @transform;
 }
 
+.mainHeadingFont {
+	font-family: "Droid Serif";
+	font-weight: 700;
+	text-shadow: 0 1px 1px #000;
+}
+
+.smallHeadingFont {
+	font-family: "Droid Sans";
+	font-weight: 700;
+	text-shadow: 0 0 10px @gray;
+}
+
+.introFont {
+	font-family: "Open Sans";
+	font-weight: normal;
+	text-shadow: 0 0 10px @gray;
+}
+
 //////////////////////////////////////////
 //  General				//
 //////////////////////////////////////////
@@ -52,6 +70,15 @@ body {
 //	padding-right: 13px;
 //}
 
+.brand {
+	.introFont;
+}
+
+ul.nav a {
+	.introFont;
+	text-shadow: none;
+}
+
 //////////////////////////////////////////
 //  Intro-section			//
 //////////////////////////////////////////
@@ -83,12 +110,18 @@ body {
 	
 	h1 {
 		margin-bottom: 0;
+		.mainHeadingFont;
+		
+		small {
+			.introFont;
+			text-shadow: none;
+		}
 	}
 	
 	p {
+		.introFont;
 		font-size: 18px;
-		font-weight: 200;
-		line-height: @baseline * 1.5;
+		line-height: @baseline * 1.5;		
 	}
 }
 
@@ -146,6 +179,12 @@ a.nolink {
 //////////////////////////////////////////
 //  Widgets				//
 //////////////////////////////////////////
+
+section.widgets {
+	h4 {
+		.smallHeadingFont;
+	}
+}
 
 #photos {
 	margin: 10px;
