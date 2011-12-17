@@ -42,8 +42,15 @@
 				
 				var items = [];
 				$.each(data.photoset.photo.sort(function(){ return Math.round(Math.random()) - 0.5 }).slice(0,options.count), function(i, item){
-					var url = "http://farm" + item.farm + ".staticflickr.com/" + item.server + "/" + item.id + "_" + item.secret + "_" + options.size + ".jpg";
-				        items.push(options.before + '<img src="' + url + '" alt="' + item.title + '">' + options.after);			
+					var photoUrl = "http://www.flickr.com/photos/" + data.photoset.ownername + "/" + item.id;
+					var imageUrl = "http://farm" + item.farm + ".staticflickr.com/" + item.server + "/" + item.id + "_" + item.secret + "_" + options.size + ".jpg";
+				
+					var link = $('<a></a>').attr('href', photoUrl).attr('title', item.title);
+					var image = $('<img>').attr('src', imageUrl).attr('alt', "Flickr photo: " + item.title).appendTo(link);					
+					var photo = $(options.before + options.after).append(link);
+					var dummy = $('<div></div>').append(photo);
+
+					items.push(dummy.html());
 				});			
 				obj.html(items.join(''));
 			}
