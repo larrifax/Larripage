@@ -18,10 +18,18 @@ $(document).ready(function(){
 		apiKey: "67a78c35dcd459db347a70e085ee73f6",
 	});
 	
-	$('.music').lastfm({
+	$('#music').lastfm({
+		count: 8,
 		username: "larrifax",
 		apiKey: "3b2dea3a8324d4c79895f2f866790441"
 	});
+	
+	$("a[rel=popover]").popover({
+		live: true,
+		html: true,
+		template: '<div class="arrow"></div><div class="inner"><h5 class="title"></h5><div class="content"><p></p></div></div>'
+	});
+	
 	
 //	$('a').filter(function() { return this.hostname && this.hostname !== location.hostname; }).after(' <img src="images/external.png" alt="External link"/>');
 	

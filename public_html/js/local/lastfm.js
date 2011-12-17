@@ -37,17 +37,15 @@
 		
 		function doShowRecentTracks(data) {
 			var items = [];
-			$(data.recenttracks.track).each(function(index, item) {				
-				var image = $('<img src="' + item.image[2]['#text'] + '">').attr('alt', item.artist['#text'] + " - " + item.name);
-				var imageDiv = $('<div></div>').append(image);
+			$(data.recenttracks.track).each(function(index, item) {
+				var info = '<strong>' + item.album['#text'] + "</strong> by <em>" + item.artist['#text'] + '</em>';
 
-				var info = '<span class="info"><span class="title">' + item.name + '</span><span class="album">' + item.album['#text'] + '</span><span class="artist">' + item.artist['#text'] + '</span></span>';
-//				var link = '<a href="' + item.url + '">' + image + info + '</a>';
-				
-				var link2 = '<a href="' + item.url + '">Test</a>';
-				
-				items.push(options.before + link2 + imageDiv.html() + options.after);
-				
+				var link = $('<a rel="popover"></a>').attr('href', item.url).attr('title', item.name).attr('data-content', info);
+				var image = $('<img>').attr('src', item.image[2]['#text']).attr('alt', info).appendTo(link);
+				var track = $(options.before + options.after).append(link);
+				var dummy = $('<div></div>').append(track);
+
+				items.push(dummy.html());
 			});
 			element.html(items.join(''));
 		}
@@ -72,7 +70,7 @@
 
 	$.fn.lastfm.defaults = {
     		count: 4,
-    		before: '<li class="cd">',
+    		before: '<li>',
     		after: "</li>"
         };
     
