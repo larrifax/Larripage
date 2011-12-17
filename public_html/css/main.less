@@ -1,0 +1,318 @@
+@import "bootstrap.less";
+
+@introHeight:		310px;
+@profilePictureHeight:	120px;
+@imgPath:		"images/";
+@iconPath:		"@{imgPath}icons/";
+
+
+// Mixins
+.transform(@transform) {
+	transform: @transform;
+	-ms-transform: @transform;
+	-webkit-transform: @transform;
+	-o-transform: @transform;
+	-moz-transform: @transform;
+}
+
+
+html, body {
+	background-color: #eee;
+}
+
+body {
+	padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
+}
+
+.container > footer p {
+	text-align: center; /* center align it with the container */
+}
+
+/* The white background content wrapper */
+.content {
+	background-color: #fff;
+	padding: 20px;
+	margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+	-webkit-border-radius: 0 0 6px 6px;
+	-moz-border-radius: 0 0 6px 6px;
+	border-radius: 0 0 6px 6px;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+	box-shadow: 0 1px 2px rgba(0,0,0,.15);
+}
+
+//.intro {
+//	.box-shadow(0 1px 5px rgba(0, 0, 0, 0.15));
+//	height: @introHeight;
+//	margin: 0 -20px 0;
+//	background: url("@{imgPath}top_img.jpg") no-repeat;
+//	border-left: 4px solid @grayDark;
+//	border-right: 4px solid @grayDark;
+//	border-bottom: 4px solid @grayDark;
+//	
+//	img {
+//		height: @profilePictureHeight;
+//		width: 120px;
+//		background: #000;
+//		position: relative;
+//		top: @introHeight;
+//		margin: @gridColumnWidth - @profilePictureHeight 0 0;
+//		border: 4px solid @grayDark;
+//		.box-shadow(1px 1px 4px rgba(0,0,0,.5));
+//	}
+//}
+
+.intro {
+	.box-shadow(0 1px 5px rgba(0, 0, 0, 0.15));
+	height: @introHeight;
+	width: 974px;
+	border-left: 4px solid @grayDark;
+	border-right: 4px solid @grayDark;
+	border-bottom: 4px solid @grayDark;
+	position: relative;
+	
+	#profile {
+		height: @profilePictureHeight;
+		width: 120px;
+		background: #000;
+		position: absolute;
+		top: 250px;
+		z-index: 110;
+		border: 4px solid @grayDark;
+		.box-shadow(1px 1px 4px rgba(0,0,0,.5));
+	}
+}
+
+.introduction {
+	margin-bottom: 30px;
+	padding: 60px;
+	h1 {
+		margin-bottom: 0;
+//		letter-spacing: -1px;
+	}
+	p {
+		font-size: 18px;
+		font-weight: 200;
+		line-height: @baseline * 1.5;
+  }
+}
+
+#slider {
+
+	ul.pagination {
+		-moz-box-sizing: content-box;
+		overflow: hidden;
+		padding: 10px 0 !important;
+    	
+	    	li {
+			width: 8px;
+			height: 8px;
+			text-indent: 10000px;
+			background: @grayDark;
+			border-radius: 10px 10px 10px 10px;			
+		}
+	
+		li.current {
+			background: @gray;
+		}
+	}
+}
+
+#photos {
+	margin: 10px;
+	list-style: none;
+	
+	li img {
+		padding: 5px;
+		background: #fff;
+		border: 2px solid @grayDark;
+		.box-shadow(1px 1px 15px rgba(0,0,0,.5));
+	}
+	
+	li:first-of-type {
+		margin: 15px 0 0 10px;
+		.transform(rotate(5deg));
+	}
+	
+	li:nth-of-type(2) {
+		margin: -30px 0 0 120px;
+		.transform(rotate(-10deg));
+	}
+}
+
+.flickr {
+	background-image: url("@{iconPath}flickr_circle2.png");
+}
+
+.twitter {
+	background-image: url("@{iconPath}twitter.png");
+}
+
+.icon {
+	background-position: center right;
+	background-repeat: no-repeat;
+	padding-right: 18px;
+}
+
+a.nolink {
+	color: @grayDark;
+	text-decoration: none;
+	line-height: inherit;
+	font-weight: inherit;
+	&:hover {
+		color: @grayDark;
+		text-decoration: underline;
+	}
+}
+
+//a[href^="http://"] {
+//	background: url("@{imgPath}external.png) center right no-repeat;
+//	padding-right: 13px;
+//}
+
+#tweets {
+	margin: 0;
+	list-style: none;
+	
+	li {
+		margin-bottom: 10px;
+		color: @grayDark;
+	}
+	
+	a {
+		font-size: 85%;
+		display: block;
+	}
+}
+
+#social {
+	margin: 0;
+	list-style: none;
+	
+	li {
+		padding: 0 0 5px 25px;
+		position: relative;
+	}
+	
+	li:before {
+		content: '';
+		background: url("@{iconPath}social.png") no-repeat left top;
+		height: 16px;
+		width: 16px;
+		position: absolute;
+		left: 0;
+	}
+	
+	#facebook:before {
+		background-position: 0 0;	
+	}
+	
+	#flickr:before {
+		background-position: 0 -17px;
+	}
+	
+	#googleplus:before {
+		background-position: 0 -34px;
+	}
+	
+	#lastfm:before {
+		background-position: 0 -51px;
+	}
+	
+	#linkedin:before {
+		background-position: 0 -68px;
+	}
+	
+	#twitter:before {
+		background-position: 0 -85px;
+	}
+}
+
+
+
+			ul.music,
+			ul.music li,
+			ul.music li a,
+			ul.music li img{
+				margin:0;
+				padding:0;
+				list-style:none;
+				border:0;
+				text-decoration:none;
+			}
+			ul.music li{
+				margin:15px 15px 15px 0;
+				float:left;
+				position:relative;
+			}
+			ul.music li a{
+				display:block;
+				position:relative;
+				float:left;	
+				width:80px;
+				height:80px;
+				text-indent:-1000em;
+				overflow:hidden;
+				z-index:1;						
+			}
+			ul.music li img{
+				position:absolute;
+				width:80px;
+				height:80px;
+				border:0;
+			}
+			
+			/* Compact Disc */
+			ul.music li.cd img,
+			ul.music li.cd a{
+				width:82px;
+				height:82px;
+				top:0;
+				left:0;
+			}			
+			ul.music li.cd a{
+				background:url("@{imgPath}covers/cd2.png") 0 0 no-repeat;			
+				height:86px;
+			}
+			ul.music li.cd{
+				background:url("@{imgPath}covers/blank_cd.jpg") 0 0 no-repeat;							
+			}
+
+
+
+
+ul#lastfm {
+
+
+	li{
+		margin: 15px 15px 15px 0;
+		float: left;
+		position: relative;
+		background: url("@{imgPath}covers/blank_cd.jpg") 0 0 no-repeat;
+		
+		a {
+			height: 86px;
+			background: url("@{imgPath}covers/cd.png") 0 0 no-repeat;
+			left: 0;
+			top: 0;
+			width: 82px;
+			
+			display: block;
+			float: left;
+			overflow: hidden;
+			position: relative;
+			text-indent: -1000em;
+			z-index: 1;
+		}
+		
+		img {
+			height: 82px;
+			left: 0;
+			top: 0;
+			width: 82px;
+			
+			position: absolute;
+		}
+		
+	}
+}
