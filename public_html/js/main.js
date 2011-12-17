@@ -27,6 +27,7 @@ $(document).ready(function(){
 	$("a[rel=popover]").popover({
 		live: true,
 		html: true,
+		delayIn: 200,
 		template: '<div class="arrow"></div><div class="inner"><h5 class="title"></h5><div class="content"><p></p></div></div>'
 	});
 	
