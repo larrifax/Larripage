@@ -41,7 +41,7 @@
 				var info = '<strong>' + item.album['#text'] + "</strong> by <em>" + item.artist['#text'] + '</em>';
 
 				var link = $('<a rel="popover"></a>').attr('href', item.url).attr('title', item.name).attr('data-content', info);
-				var image = $('<img>').attr('src', item.image[2]['#text']).attr('alt', info).appendTo(link);
+				var image = $('<img>').attr('src', item.image[2]['#text']).attr('alt', '').appendTo(link);
 				var track = $(options.before + options.after).append(link);
 				var dummy = $('<div></div>').append(track);
 

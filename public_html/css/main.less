@@ -150,20 +150,30 @@ ul.nav a {
 //////////////////////////////////////////
 
 .icon {
-	background-position: center right;
-	background-repeat: no-repeat;
-	padding-right: 18px;
+
+	padding-right: 20px;
+	position: relative;
 	
-	&.flickr {
-		background-image: url("@{iconPath}flickr.png");
+	&:before {
+		content: '';
+		background: url("@{iconPath}social.png") no-repeat left top;
+		height: 16px;
+		width: 16px;
+		position: absolute;
+		right: 0;
+		top: 1px;
 	}
-
-	&.twitter {
-		background-image: url("@{iconPath}twitter.png");
+	
+	&.flickr:before {
+		background-position: 0 -18px;	
 	}
-
-	&.lastfm {
-		background-image: url("@{iconPath}lastfm.png");
+	
+	&.twitter:before {
+		background-position: -18px -18px;	
+	}
+	
+	&.lastfm:before {
+		background-position: -36px -18px;	
 	}
 }
 
@@ -229,22 +239,20 @@ section.widgets {
 	
 	li {
 		margin: 15px 15px 15px 0;
-		position: relative;
 		float: left;
-		background: url("@{imgPath}covers/vinyl_insert.gif") 2px 1px no-repeat;
+		background: url("@{imgPath}covers/covers.png") -98px 1px no-repeat;
 		
 		a {
 			width: 96px;
 			height: 76px;
 			float: left;
-			background: url("@{imgPath}covers/vinyl.png") 0 0 no-repeat;
+			background: url("@{imgPath}covers/covers.png") 0 0 no-repeat;
 		}
 		
 		img {
 			width: 72px;
 			height: 72px;
-			position: absolute;
-			top: 1px;
+			position: relative;
 			left: 2px;
 		}
 	}
