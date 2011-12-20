@@ -1,0 +1,9 @@
+[submodule "lib/less.js"]
+	path = lib/less.js
+	url = git://github.com/cloudhead/less.js.git
+[submodule "lib/flux-slider"]
+	path = lib/flux-slider
+	url = git://github.com/joelambert/Flux-Slider.git
+[submodule "lib/bootstrap"]
+	path = lib/bootstrap
+	url = git://github.com/twitter/bootstrap.git
