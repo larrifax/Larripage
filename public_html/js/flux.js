@@ -1,0 +1,1 @@
+../../lib/flux-slider/js/flux.min.js
