@@ -7,3 +7,6 @@
 [submodule "lib/bootstrap"]
 	path = lib/bootstrap
 	url = git://github.com/twitter/bootstrap.git
+[submodule "lib/jquery-prettydate"]
+	path = lib/jquery-prettydate
+	url = git@github.com:larrifax/jquery-prettydate.git
