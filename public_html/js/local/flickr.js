@@ -46,8 +46,11 @@
 					var photoUrl = "http://www.flickr.com/photos/" + data.photoset.ownername + "/" + item.id;
 					var imageUrl = "http://farm" + item.farm + ".staticflickr.com/" + item.server + "/" + item.id + "_" + item.secret + "_" + options.size + ".jpg";
 					
-					var dateTaken = $.format.date(item.datetaken, "dd MMMM, yyyy");
-					var info = 'Taken on ' + dateTaken + ' by <em>' + data.photoset.ownername + '</em>';
+					var dateTaken = $.prettyDate.format(item.datetaken, false);
+					if (!dateTaken)
+						dateTaken = 'on ' + formatDate(item.datetaken);
+					
+					var info = 'Taken ' + dateTaken + ' by <em>' + data.photoset.ownername + '</em>';
 				
 					var link = $('<a rel="popover" data-placement="left" data-offset="10"></a>').attr('href', photoUrl).attr('title', item.title).attr('data-content', info).attr('class', 'block');
 					var image = $('<img>').attr('src', imageUrl).attr('alt', "Flickr photo: " + item.title).appendTo(link);					

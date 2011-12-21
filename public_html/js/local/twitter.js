@@ -30,7 +30,11 @@
 			success: function(data) {
 				var items = [];
 				$.each(data, function(key, item) {
-					items.push(options.before + '<span>' + item.text + '</span>' + '<a href="http://twitter.com/' + item.user.screen_name + '/statuses/' + item.id_str + '">' + relative_time(item.created_at) + '</a>' + options.after);
+					var date = $.prettyDate.format(item.created_at, false);
+					if (!date)
+						date = formatDate(item.created_at);
+				
+					items.push(options.before + '<span>' + item.text + '</span>' + '<a href="http://twitter.com/' + item.user.screen_name + '/statuses/' + item.id_str + '">' + date + '</a>' + options.after);
 				});
 				obj.html(items.join(''));
 			} 
