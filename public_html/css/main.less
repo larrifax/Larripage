@@ -19,22 +19,26 @@
 	-moz-transform: @transform;
 }
 
+.columnWithPadding(@columnSpan: 1, @padding: 0px) {
+	width: (@gridColumnWidth * @columnSpan) + (@gridGutterWidth * (@columnSpan - 1) - @padding);
+}
+
 .mainHeadingFont {
 	font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 700;
-	text-shadow: 1px 1px 3px @gray;
+	text-shadow: 1px 1px 2px @grayLight;
 }
 
 .smallHeadingFont {
 	font-family: "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 700;
-	text-shadow: 0 0 8px @gray;
+	text-shadow: 0 0 1px @grayLight;
 }
 
 .introFont {
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: normal;
-	text-shadow: 1px 1px 2px @gray;
+	text-shadow: 1px 1px 2px @grayLight;
 }
 
 //////////////////////////////////////////
@@ -77,6 +81,26 @@ body {
 ul.nav a {
 	.introFont;
 	text-shadow: none;
+}
+
+.code-block {
+	display: inline-block;
+	line-height: 1.5em;
+	padding: 0 0.4em;
+}
+
+.inset-panel, .code-block {
+	box-shadow: 0 1px 0 @white, inset 0 1px 3px rgba(0, 0, 0, .5);
+	text-shadow: 0 1px 1px @white;
+}
+
+.rounded {
+	.border-radius(4px);
+}
+
+.vertical-rule {
+	border-right: 1px solid #bbb;
+	.box-shadow(1px 0 0 @white);
 }
 
 //////////////////////////////////////////
@@ -219,17 +243,22 @@ section.widgets {
 }
 
 #tweets {
-	margin: 0;
-	list-style: none;
+        .columnWithPadding(6, 21px);
+        padding: 10px;
+
+	ul {
+		margin: 0;
+		list-style: none;
 	
-	li {
-		margin-bottom: 10px;
-		color: @grayDark;
-	}
+		li {
+			margin-bottom: 10px;
+			color: @grayDark;
+		}
 	
-	a {
-		font-size: 85%;
-		display: block;
+		a {
+			font-size: 85%;
+			display: block;
+		}
 	}
 }
 

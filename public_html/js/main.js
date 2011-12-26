@@ -21,7 +21,7 @@ $(document).ready(function(){
 		apiKey: "67a78c35dcd459db347a70e085ee73f6",
 	});
 
-	$('#tweets').twitter({
+	$('#tweets ul').twitter({
 		tweets: 4,
 		username: "larrifax"
 	});
