@@ -10,3 +10,6 @@
 [submodule "lib/jquery-prettydate"]
 	path = lib/jquery-prettydate
 	url = git@github.com:larrifax/jquery-prettydate.git
+[submodule "lib/uglifyjs"]
+	path = lib/uglifyjs
+	url = git://github.com/mishoo/UglifyJS.git
