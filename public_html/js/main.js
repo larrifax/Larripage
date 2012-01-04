@@ -45,7 +45,7 @@ $(document).ready(function(){
 
 function createLoader()
 {
-	return '<img style="padding-left: 50%" src="images/loader.gif">';
+	return '<img style="padding-left: 50%" src="http://static.tryggestad.me/images/loader.gif">';
 }
 
 function createError(type, message, fadeIn, canClose)
