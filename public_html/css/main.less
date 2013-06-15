@@ -133,25 +133,29 @@ ul.nav a {
 	}
 }
 
-#introduction {
+section.content {
 	margin-bottom: 30px;
-	padding: 60px;
-	
-	h1 {
-		margin-bottom: 0;
-		.mainHeadingFont;
+	padding: 60px 65px 0;
+}
+
+.mainSection {
+	margin-bottom: 50px;
+}
+
+.mainHeading {
+	margin-bottom: 0;
+	.mainHeadingFont;
 		
-		small {
-			.introFont;
-			text-shadow: none;
-		}
-	}
-	
-	p {
+	small {
 		.introFont;
-		font-size: 18px;
-		line-height: @baseline * 1.5;		
+		text-shadow: none;
 	}
+}
+
+.mainText {
+	.introFont;
+	font-size: 18px;
+	line-height: @baseline * 1.5;
 }
 
 #slider {
@@ -338,4 +342,23 @@ section.widgets {
 	#twitter:before {
 		background-position: -108px 0;
 	}
+}
+
+//////////////////////////////////////////
+//  About-page				//
+//////////////////////////////////////////
+blockquote.pullquote {
+	.pull-right();
+	margin: 0 0 15px 15px;
+	width: 260px;
+	
+	&.wide {
+		width: 325px;
+	}
+}
+
+#signature {
+	margin: 10px 0;
+	padding-top: 10px;
+	border-top: 1px solid #eee;
 }
