@@ -13,7 +13,7 @@
 		var errorMsg = options.before + createError("warning", "Could not load tweets.", false, false) + options.after;
 		
 		$.ajax({
-			url: "http://api.twitter.com/1/statuses/user_timeline.json",
+			url: "http://api.twitter.tryggestad.me/1.1/statuses/user_timeline.json",
 			dataType: 'jsonp',
 			data:
 			{
