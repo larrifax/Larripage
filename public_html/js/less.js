@@ -1,1 +1,0 @@
-../../lib/less.js/dist/less-1.1.6.min.js
